@@ -1,0 +1,69 @@
+/* ══════════════════════════════════════════
+    AVES DE MALLORCA — styles.css
+   ══════════════════════════════════════════ */
+
+/* ──────────────────────────────────────
+    Variables de color y Reset
+────────────────────────────────────── */
+:root {
+    --cream:       #F4EFE4;
+    --cream-dark:  #E4DAC6;
+    --white:       #FDFAF5;
+    --sage:        #6E9972;
+    --sage-light:  #9BBF9E;
+    --sage-dark:   #3D6640;
+    --sky:         #7BAFC2;
+    --earth:       #B88760;
+    --sand:        #E0CFA0;
+    --dark:        #2A382B;
+    --text:        #3A4A3B;
+    --text-light:  #6A7A6B;
+    --accent:      #C4756A;
+}
+
+
+body {
+    font-family: 'Raleway', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    line-height: 1.7;
+}
+
+/* ──────────────────────────────────────
+    Header
+────────────────────────────────────── */
+header {
+    background-color: var(--dark);
+    color: var(--white);
+    padding: 3.5rem 2rem 3rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse at 15% 60%, rgba(110,153,114,0.22) 0%, transparent 55%),
+        radial-gradient(ellipse at 85% 25%, rgba(123,175,194,0.18) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.header-birds {
+    font-size:200%;
+    letter-spacing: normal;
+    margin-bottom:auto;
+    opacity: 0.7;
+}
+
+.header-eyebrow {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--sage-light);
+    margin-bottom: 0.6rem;
+}
