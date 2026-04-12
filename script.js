@@ -50,7 +50,6 @@ const birds = {
         zone: "tramuntana",
         desc: "Gran rapaz inconfundible por su cola ahorquillada de color rojizo. Planea majestuosamente sobre los valles de la Tramuntana aprovechando las térmicas. Especie protegida con una importante colonia mallorquina.",
         habitat: "Bosque mediterráneo y zonas abiertas de montaña",
-        sound: 'whistle'
     },
     aguila: {
         name: "Águila-azor Perdicera",
@@ -59,7 +58,6 @@ const birds = {
         zone: "tramuntana",
         desc: "Una de las águilas más raras de Europa, presente en los riscos de la Sierra de Tramuntana. Cría en parejas muy territoriales en los acantilados. Es el único águila nidificante en Mallorca y goza de protección estricta.",
         habitat: "Riscos rocosos y bosques de montaña",
-        sound: 'hawk'
     },
     corb: {
         name: "Cuervo",
@@ -68,7 +66,6 @@ const birds = {
         zone: "tramuntana",
         desc: "El mayor córvido europeo, inteligente y omnívoro. En Mallorca habita las zonas de montaña y los acantilados costeros donde anida. Su grave grito «graaj» resuena por los barrancos de la Tramuntana. Forma parejas estables para toda la vida.",
         habitat: "Montañas, acantilados y bosques",
-        sound: 'crow'
     },
     agro: {
         name: "Garceta Grande",
@@ -77,7 +74,6 @@ const birds = {
         zone: "albufera",
         desc: "Ardeida elegante de plumaje completamente blanco y pico amarillo intenso. Muy común en S'Albufera donde se alimenta de peces en los bordes de las lagunas. En invierno llegan ejemplares del norte de Europa, aumentando mucho los efectivos.",
         habitat: "Zonas húmedas, lagunas y canales",
-        sound: 'heron'
     },
     fotja: {
         name: "Focha Común",
@@ -86,7 +82,6 @@ const birds = {
         zone: "albufera",
         desc: "Ave acuática inconfundible por su plumaje negro y el escudo frontal blanco característico. Muy abundante en S'Albufera donde forma grandes agrupaciones. Anida entre la vegetación acuática densa y es muy territorial durante la cría.",
         habitat: "Lagunas, estanques y canales",
-        sound: 'coot'
     },
     busqueta: {
         name: "Cetia Ruiseñor",
@@ -95,7 +90,6 @@ const birds = {
         zone: "albufera",
         desc: "Pequeño pájaro de carrizal con un canto fuerte, explosivo y absolutamente inconfundible: una ráfaga rápida de notas que se detiene bruscamente. A pesar de ser difícil de ver entre los carrizos, su canto lo delata enseguida. Residente permanente.",
         habitat: "Carrizales y vegetación de ribera",
-        sound: 'warbler'
     },
     xoriguer: {
         name: "Cernícalo Vulgar",
@@ -104,7 +98,6 @@ const birds = {
         zone: "pla",
         desc: "Pequeño halcón fácilmente reconocible por su técnica de cernirse (vuelo estacionario batiendo las alas rápidamente). Habitual en los márgenes de carreteras y campos del Pla de Mallorca. El macho adulto tiene la cabeza gris y la cola también gris.",
         habitat: "Campos abiertos, zonas agrícolas y bordes de caminos",
-        sound: 'kestrel'
     },
     puput: {
         name: "Abubilla",
@@ -113,7 +106,6 @@ const birds = {
         zone: "pla",
         desc: "Ave absolutamente inconfundible por su gran cresta de plumas erectiles y el plumaje marrón, negro y blanco. Habitual en los campos de olivos y almendros del Pla. Su canto repetitivo «up-up-up» es la banda sonora de la primavera mallorquina.",
         habitat: "Olivos, almendros y zonas agrícolas",
-        sound: 'hoopoe'
     },
     sebelli: {
         name: "Alcaraván Común",
@@ -122,7 +114,6 @@ const birds = {
         zone: "pla",
         desc: "Ave de zonas áridas y pedregosas con hábitos crepusculares y nocturnos. Sus ojos amarillos y grandes están perfectamente adaptados a la oscuridad. Durante el día permanece inmóvil entre las piedras, perfectamente camuflado. El canto nocturno es muy estridente.",
         habitat: "Garrigas áridas, pedregales y eriales",
-        sound: 'curlew'
     },
     baldritja: {
         name: "Pardela Mediterránea",
@@ -131,7 +122,6 @@ const birds = {
         zone: "llevant",
         desc: "Procelariforme especializada en volar planeando rasante sobre las olas durante horas. Anida en grietas de los acantilados de la costa este. De día se aleja al mar para pescar. De noche regresa a los nidos con unos gritos ensordecedores.",
         habitat: "Acantilados costeros y mar abierto",
-        sound: 'seabird'
     },
     falco: {
         name: "Halcón de Eleonor",
@@ -140,7 +130,6 @@ const birds = {
         zone: "llevant",
         desc: "Elegante halcón migratorio que elige los acantilados costeros de Mallorca para criar. Especialista en capturar pequeñas aves migratorias durante el otoño. Llega en primavera desde Madagascar y regresa allí hacia noviembre.",
         habitat: "Acantilados costeros y espacios aéreos",
-        sound: 'falcon'
     },
     roquero: {
         name: "Roquero solitario",
@@ -149,7 +138,6 @@ const birds = {
         zone: "llevant",
         desc: "De color azul oscuro en los machos y pardo en las hembras, es un habitante típico de zonas rocosas y acantilados. Se posa en piedras elevadas desde donde canta con un tono melancólico. Busca insectos y pequeños invertebrados entre grietas. Su presencia aporta un toque muy mediterráneo al paisaje.",
         habitat: "Acantilados costeros",
-        sound: 'roquero'
     },
     flamenc: {
         name: "Flamenco Común",
@@ -158,7 +146,6 @@ const birds = {
         zone: "migjorn",
         desc: "El ave icónica e inolvidable de las salinas mallorquinas. Su color rosado se intensifica gracias a la dieta de crustáceos y algas. Filtra el agua con su singular pico curvado y con la cabeza invertida. Las Salinas de s'Avall acogen concentraciones espectaculares.",
         habitat: "Salinas, lagunas y marismas costeras",
-        sound: 'flamingo'
     },
     gavina: {
         name: "Gaviota Patiamarilla",
@@ -167,7 +154,6 @@ const birds = {
         zone: "migjorn",
         desc: "La gaviota más abundante y omnipresente de Mallorca, presente en todas las costas y puertos. Muy adaptable y oportunista, anida en acantilados, tejados y canteras. Su potente grito inconfundible es la música de fondo de cualquier costa de la isla.",
         habitat: "Todas las costas, puertos y zonas urbanas costeras",
-        sound: 'seagull'
     },
     chortilejo: {
         name: "Chorlitejo patinegro",
@@ -176,7 +162,6 @@ const birds = {
         zone: "migjorn",
         desc: "Pequeño limícola que cría directamente sobre la arena de las playas, camuflándose perfectamente. Corre en pequeños tramos para capturar insectos y crustáceos. Es muy sensible a la presencia humana y depende de dunas y playas tranquilas. Su comportamiento discreto y su plumaje claro lo hacen difícil de detectar.",
         habitat: "Playas y zonas dunares entre abril y julio",
-        sound: 'chortilejo'
     }
 
 };
@@ -216,7 +201,6 @@ const bgGrads = {
         </div>
         <div class="bird-foot">
             <span class="bird-habitat">🌿 ${b.habitat}</span>
-            <button class="btn-snd" onclick="playBirdSound('${b.sound}', this)">🔊 Canto</button>
         </div>`;
 
         grid.appendChild(card);
@@ -299,7 +283,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Renderizar contenido generado por JavaScript
     renderBirds();
-    renderRoutes();
+
 
     // Clic en zonas del mapa SVG
     document.querySelectorAll('.zone-area').forEach(el =>

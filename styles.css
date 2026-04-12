@@ -169,9 +169,10 @@ section + section { border-top: 1px solid var(--cream-dark); }
 ────────────────────────────────────── */
 .map-card {
     background: var(--white);
-    border-radius: 14px;
+    border-radius: 12px;
     padding: 16px;
     box-shadow: 0 4px 32px rgba(42,56,43,0.08);
+
 }
 
 .map-layout {
@@ -179,16 +180,14 @@ section + section { border-top: 1px solid var(--cream-dark); }
     grid-template-columns: 1fr 340px;
     gap: 16px;
     align-items: start;
+    border-radius: 12px;
 }
-#mapa-container svg {
-    width: 100%;
-    height: auto;
-}
+
 #mallorca-svg {
     width: 100%;
     height: auto;
     cursor: default;
-    border-radius: 8px;
+    border-radius: 12px;
     overflow: hidden;
 }
 
@@ -202,12 +201,16 @@ section + section { border-top: 1px solid var(--cream-dark); }
 .zone-area:hover  { opacity: 0.92 !important; filter: brightness(1.08); }
 .zone-area.active { opacity: 1;    filter: brightness(1.12) drop-shadow(0 0 6px rgba(0,0,0,0.25)) ; }
 
+
+
 /* Panel de información lateral */
 .info-panel {
     background: var(--cream);
-    border-radius: 10px;
+    border-radius: 20px;
     padding: 12px;
     min-height: 380px;
+    width: min(1000px, 100%);
+    overflow-y: auto;
 }
 .info-placeholder {
     text-align: center;
@@ -221,7 +224,7 @@ section + section { border-top: 1px solid var(--cream-dark); }
     margin-bottom: 6px;
 }
 .info-placeholder p {
-    font-size: 8px;
+    font-size: 20px;
     line-height: 1.5;
 }
 
@@ -242,6 +245,14 @@ section + section { border-top: 1px solid var(--cream-dark); }
     padding-bottom: 1rem;
     border-bottom: 1px solid var(--cream-dark);
     line-height: 1.6;
+}
+
+.btn-snd {
+    display: none;
+}
+
+.btn-snd-sm {
+    display: none;
 }
 
 /* Lista de aves dentro del panel */
@@ -296,7 +307,7 @@ section + section { border-top: 1px solid var(--cream-dark); }
     display: flex;
     align-items: center;
     gap: 0.4rem;
-    font-size: 0.74rem;
+    font-size: 14px;
     color: var(--text-light);
     cursor: pointer;
     padding: 0.3rem 0.5rem;
@@ -398,13 +409,10 @@ section + section { border-top: 1px solid var(--cream-dark); }
     position: relative;
     z-index: 1;
     filter: drop-shadow(0 4px 10px rgba(0,0,0,0.2));
-    animation: float 4s ease-in-out infinite;
+
 }
 
-@keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50%       { transform: translateY(-6px); }
-}
+
 
 /* Cuerpo de la tarjeta */
 .bird-body {
@@ -480,3 +488,18 @@ footer {
 
 footer strong { color: var(--sage-light); }
 footer p + p  { margin-top: 0.4rem; font-size: 0.72rem; }
+
+
+/* ──────────────────────────────────────
+    Responsive
+────────────────────────────────────── */
+    @media (max-width: 800px) {
+    .map-layout {
+        grid-template-columns: 1fr;
+    }
+    nav a {
+        font-size: 0.76rem;
+        padding: 0.8rem 0.9rem;
+        letter-spacing: 0.06em;
+    }
+}
