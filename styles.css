@@ -126,7 +126,7 @@ nav a.active { color: var(--sage-dark); border-bottom-color: var(--sage); }
 
 
 /* ──────────────────────────────────────
-    Encabezado de las secciones mapa, aves y rutas
+    Encabezado de las secciones mapa, aves
 ────────────────────────────────────── */
 main {
     max-width: 1200px;
@@ -180,7 +180,10 @@ section + section { border-top: 1px solid var(--cream-dark); }
     gap: 16px;
     align-items: start;
 }
-
+#mapa-container svg {
+    width: 100%;
+    height: auto;
+}
 #mallorca-svg {
     width: 100%;
     height: auto;
