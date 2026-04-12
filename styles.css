@@ -21,9 +21,14 @@
     --accent:      #C4756A;
 }
 
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
 body {
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Playfair Display', serif;
     background: var(--cream);
     color: var(--text);
     line-height: 1.7;
@@ -60,10 +65,415 @@ header::before {
 }
 
 .header-eyebrow {
-    font-size: 0.72rem;
+    font-size:small;
     font-weight: 600;
-    letter-spacing: 0.35em;
+    letter-spacing: 5px;
     text-transform: uppercase;
     color: var(--sage-light);
-    margin-bottom: 0.6rem;
+    margin-bottom: 2px;
 }
+
+header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 80px;
+    font-weight: 400;
+    line-height: 1.1;
+    margin-bottom:16px;
+}
+
+header h1 em {
+    font-style: italic;
+    color: var(--sage-light);
+}
+
+.header-sub {
+    font-size: 16px;
+    font-weight: 300;
+    color: rgba(226, 196, 148, 0.65);
+    max-width: 520px;
+    margin: 0 auto;
+}
+
+/* ──────────────────────────────────────
+    Navegador mapa, aves
+────────────────────────────────────── */
+
+nav {
+    background: var(--white);
+    border-bottom: 1px solid var(--cream-dark);
+    display: flex;
+    justify-content: center;
+    position: sticky;
+    top: 0;
+    box-shadow: 0 2px 12px rgba(42,56,43,0.06);
+    
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-light);
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 16px 32px;
+    border-bottom: 2px solid transparent;
+    transition: color .2s, border-color .2s;
+}
+
+nav a:hover  { color: var(--sage-dark); border-bottom-color: var(--sage-light); }
+nav a.active { color: var(--sage-dark); border-bottom-color: var(--sage); }
+
+
+/* ──────────────────────────────────────
+    Encabezado de las secciones mapa, aves y rutas
+────────────────────────────────────── */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+section { padding: 4rem 0; }
+section + section { border-top: 1px solid var(--cream-dark); }
+
+.section-eyebrow {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--sage);
+    margin-bottom: 0.4rem;
+}
+
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.9rem, 4vw, 2.9rem);
+    font-weight: 400;
+    color: var(--dark);
+    line-height: 1.15;
+}
+
+.section-desc {
+    color: var(--text-light);
+    font-weight: 300;
+    margin-top: 0.7rem;
+    max-width: 600px;
+}
+
+.section-header { margin-bottom: 2.5rem; }
+
+
+/* ──────────────────────────────────────
+    Mapa SVG
+────────────────────────────────────── */
+.map-card {
+    background: var(--white);
+    border-radius: 14px;
+    padding: 16px;
+    box-shadow: 0 4px 32px rgba(42,56,43,0.08);
+}
+
+.map-layout {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 16px;
+    align-items: start;
+}
+
+#mallorca-svg {
+    width: 100%;
+    height: auto;
+    cursor: default;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Zonas del mapa (paths SVG) */
+.zone-area {
+    cursor: pointer;
+    transition: filter .2s, opacity .2s;
+    opacity: 0.75;
+}
+
+.zone-area:hover  { opacity: 0.92 !important; filter: brightness(1.08); }
+.zone-area.active { opacity: 1;    filter: brightness(1.12) drop-shadow(0 0 6px rgba(0,0,0,0.25)) ; }
+
+/* Panel de información lateral */
+.info-panel {
+    background: var(--cream);
+    border-radius: 10px;
+    padding: 12px;
+    min-height: 380px;
+}
+.info-placeholder {
+    text-align: center;
+    padding: 32px 8px;
+    color: var(--text-light);
+}
+
+.info-placeholder .big {
+    font-size: 32px;
+    display: block;
+    margin-bottom: 6px;
+}
+.info-placeholder p {
+    font-size: 8px;
+    line-height: 1.5;
+}
+
+#zone-detail { display: none; }
+
+#zone-detail h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 14px;
+    color: var(--dark);
+    margin-bottom: 4px;
+}
+
+.zone-desc-text {
+    font-size: 0.83rem;
+    color: var(--text-light);
+    font-weight: 300;
+    margin-bottom: 1.25rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--cream-dark);
+    line-height: 1.6;
+}
+
+/* Lista de aves dentro del panel */
+.panel-birds {
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+}
+
+.panel-bird {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    padding: 0.7rem 0.8rem;
+    background: var(--white);
+    border-radius: 8px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: border-color .2s, transform .2s;
+}
+
+.panel-bird:hover {
+    border-color: var(--sage-light);
+    transform: translateX(3px);
+}
+
+.panel-bird-emoji { font-size: 1.75rem; flex-shrink: 0; }
+
+.panel-bird-name {
+    font-weight: 600;
+    font-size: 0.88rem;
+    color: var(--dark);
+}
+
+.panel-bird-latin {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 0.76rem;
+    color: var(--text-light);
+}
+
+
+/* Leyenda del mapa */
+.map-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: 1rem;
+}
+
+.leg-item {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.74rem;
+    color: var(--text-light);
+    cursor: pointer;
+    padding: 0.3rem 0.5rem;
+    border-radius: 5px;
+    transition: background .2s;
+}
+
+.leg-item:hover { background: var(--cream-dark); }
+
+.leg-dot {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.leg-line {
+    width: 16px;
+    height: 3px;
+    border-radius: 2px;
+    flex-shrink: 0;
+}
+
+/* ──────────────────────────────────────
+    Barra de filtros
+────────────────────────────────────── */
+.filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.filter-label {
+    font-size: 0.76rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-light);
+    margin-right: 0.3rem;
+}
+
+.filter-btn {
+    background: var(--white);
+    border: 1px solid var(--cream-dark);
+    color: var(--text-light);
+    padding: 0.4rem 1rem;
+    border-radius: 100px;
+    cursor: pointer;
+    font-size: 0.79rem;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+    transition: all .2s;
+}
+
+.filter-btn:hover  { border-color: var(--sage); color: var(--sage-dark); }
+.filter-btn.active { background: var(--sage); border-color: var(--sage); color: white; }
+
+/* ──────────────────────────────────────
+    Tarjetas de aves
+────────────────────────────────────── */
+.birds-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(295px, 1fr));
+    gap: 1.4rem;
+}
+
+.bird-card {
+    background: var(--white);
+    border-radius: 12px;
+    border: 1px solid var(--cream-dark);
+    box-shadow: 0 2px 16px rgba(42,56,43,0.06);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform .25s, box-shadow .25s;
+}
+
+.bird-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 32px rgba(42,56,43,0.12);
+}
+
+.bird-card.hidden { display: none; }
+
+/* Ilustración superior de la tarjeta */
+.bird-illus {
+    height: 140px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.bird-emoji-xl {
+    font-size: 4rem;
+    position: relative;
+    z-index: 1;
+    filter: drop-shadow(0 4px 10px rgba(0,0,0,0.2));
+    animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50%       { transform: translateY(-6px); }
+}
+
+/* Cuerpo de la tarjeta */
+.bird-body {
+    padding: 1.2rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.bird-zone-tag {
+    display: inline-block;
+    font-size: 0.66rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.18rem 0.55rem;
+    border-radius: 4px;
+    color: white;
+    margin-bottom: 0.7rem;
+}
+
+.bird-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.22rem;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 0.15rem;
+}
+
+.bird-latin {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 0.83rem;
+    color: var(--text-light);
+    margin-bottom: 0.7rem;
+}
+
+.bird-desc {
+    font-size: 0.83rem;
+    color: var(--text);
+    font-weight: 300;
+    line-height: 1.6;
+    flex: 1;
+}
+
+/* Pie de la tarjeta */
+.bird-foot {
+    padding: 0.9rem 1.2rem;
+    border-top: 1px solid var(--cream-dark);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bird-habitat {
+    font-size: 0.74rem;
+    color: var(--text-light);
+}
+
+
+
+/* ──────────────────────────────────────
+    Footer
+────────────────────────────────────── */
+footer {
+    background: var(--dark);
+    color: rgba(253,250,245,0.55);
+    text-align: center;
+    padding: 2rem;
+    margin-top: 5rem;
+    font-size: 0.8rem;
+}
+
+footer strong { color: var(--sage-light); }
+footer p + p  { margin-top: 0.4rem; font-size: 0.72rem; }
